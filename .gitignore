@@ -1,1 +1,7 @@
 covid-chestxray-dataset-master/
+.vscode/
+predictionwithmodel.py
+faces.h5
+coviddetection.h5
+VirusAnalysis.py
+model/
