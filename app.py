@@ -26,7 +26,26 @@ def index():
         predictionarray = np.array(imagearraygray)
         predictionarray = predictionarray.reshape(1,50,50,1)
         predictions = model.predict(predictionarray)
-        print(np.argmax(predictions[0]))
+        prediction = np.argmax(predictions[0])
+        if prediction == 0:
+            print("COVID-19 Pneumonia")
+
+        if prediction == 1:
+            print("ARDS Pneumonia")
+
+        if prediction == 2:
+            print("SARS Pneumonia")
+
+        if prediction == 3:
+            print("Pneumocystis Pneumonia")
+
+        if prediction == 4:
+            print("Streptococcus Pneumonia")
+
+          #No Finding does not work very well, as the dataset only has 1 or 2 cases of
+          #it
+        if prediction == 5:
+            print("no infection")
 
         return render_template("index.html",img="")
 
