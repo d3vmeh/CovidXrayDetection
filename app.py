@@ -27,27 +27,28 @@ def index():
         predictionarray = predictionarray.reshape(1,50,50,1)
         predictions = model.predict(predictionarray)
         prediction = np.argmax(predictions[0])
+        message = ""
         if prediction == 0:
-            print("COVID-19 Pneumonia")
+            message = ("COVID-19 Pneumonia")
 
         if prediction == 1:
-            print("ARDS Pneumonia")
+            message = ("ARDS Pneumonia")
 
         if prediction == 2:
-            print("SARS Pneumonia")
+            message = ("SARS Pneumonia")
 
         if prediction == 3:
-            print("Pneumocystis Pneumonia")
+            message = ("Pneumocystis Pneumonia")
 
         if prediction == 4:
-            print("Streptococcus Pneumonia")
+            message = ("Streptococcus Pneumonia")
 
           #No Finding does not work very well, as the dataset only has 1 or 2 cases of
           #it
         if prediction == 5:
-            print("no infection")
+            message = ("no infection")
 
-        return render_template("index.html",img="")
+        return render_template("index.html",img="",msg=message)
 
 
 
